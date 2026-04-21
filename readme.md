@@ -64,6 +64,7 @@ Four core tables:
 	∙	sales — completed transactions with total, cost, date, and user
 	∙	messages — low stock alert records linked to stock items
 
+
 ## Setup
 Requirements
 	∙	PHP 8+
