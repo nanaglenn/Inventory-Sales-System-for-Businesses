@@ -1,20 +1,17 @@
 # Inventory & Sales Management System
 
-A simple web application for managing shop inventory, tracking sales, and monitoring stock levels.
+A web-based application designed to help small businesses manage inventory, track sales, and monitor product movement in real time.
 
-## Features
+## Key Features
+- Product management (add, update, delete items)
+- Sales tracking and history
+- Inventory monitoring
+- Simple and intuitive admin interface
 
-* Product management (CRUD operations)
-* Sales tracking and transaction records
-* Automatic stock updates after each sale
-* Dashboard overview for monitoring inventory
+## Use Case
+This system is ideal for small shops and businesses that need a lightweight solution to manage stock and sales without complex software.
 
 ## Tech Stack
-
-* Laravel (PHP)
-* MySQL
-* Bootstrap
-* JavaScript
-
-## Author
-Glenn Ansah
+- Laravel / PHP
+- MySQL
+- JavaScript / Bootstrap
