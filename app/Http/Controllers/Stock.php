@@ -43,23 +43,14 @@ class Stock extends Controller
         return view("add-new-item", compact("status"));
     }
 
-<<<<<<< HEAD
-    public function getStock(Request $request){
-=======
     public function getStock(){
->>>>>>> 378df80085aad65960795f2be6d92428dac60024
         $stock = DB::select("SELECT * FROM stock ORDER BY item_name");
 
         return view("stock", compact("stock"));
     }
 
-<<<<<<< HEAD
-    public function getCurrentStock(Request $request){
-        $itemId = $request->input("item-id");
-=======
     public function getCurrentStock(){
         $itemId = $_GET["item-id"];
->>>>>>> 378df80085aad65960795f2be6d92428dac60024
 
         $stock = DB::select("SELECT current_stock, unit_price FROM stock WHERE id = (?)", [$itemId]);
 
@@ -91,13 +82,8 @@ class Stock extends Controller
         return view("stock", compact("stock"));
     }
 
-<<<<<<< HEAD
-    public function deleteStock(Request $request){
-        $itemId = $request->input('item-id');
-=======
     public function deleteStock(){
         $itemId = $_GET['item-id'];
->>>>>>> 378df80085aad65960795f2be6d92428dac60024
 
         if(DB::delete("DELETE FROM stock WHERE id = (?)", [$itemId]))
             return 1;

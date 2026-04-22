@@ -17,15 +17,9 @@ class Sales extends Controller
         return view("sales-records", compact("salesRecords"));
     }
 
-<<<<<<< HEAD
-    public function calculateSubtotal(Request $request){
-        $totalsSpArray = $request->input('totals-sp-array');
-        $totalsCpArray = $request->input('totals-cp-array');
-=======
     public function calculateSubtotal(){
         $totalsSpArray = $_GET['totals-sp-array'];
         $totalsCpArray = $_GET['totals-cp-array'];
->>>>>>> 378df80085aad65960795f2be6d92428dac60024
 
         $sellingPriceSubtotal = 0;
         $costPriceSubtotal = 0;
