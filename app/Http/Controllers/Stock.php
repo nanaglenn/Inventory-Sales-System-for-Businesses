@@ -49,8 +49,8 @@ class Stock extends Controller
         return view("stock", compact("stock"));
     }
 
-    public function getCurrentStock(){
-        $itemId = $_GET["item-id"];
+    public function getCurrentStock(Request $request){
+        $itemId = $request->input("item-id");
 
         $stock = DB::select("SELECT current_stock, unit_price FROM stock WHERE id = (?)", [$itemId]);
 
@@ -82,8 +82,8 @@ class Stock extends Controller
         return view("stock", compact("stock"));
     }
 
-    public function deleteStock(){
-        $itemId = $_GET['item-id'];
+    public function deleteStock(Request $request){
+        $itemId = $request->input('item-id');
 
         if(DB::delete("DELETE FROM stock WHERE id = (?)", [$itemId]))
             return 1;

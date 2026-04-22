@@ -42,7 +42,7 @@ class Checkout extends Controller
         return $total;
     }
 
-    public function checkout(){
+    public function salesCheckout(Request $request){
         $items = $_GET['check-out-list'];
 
         $totalSellingPrice = 0;
@@ -87,8 +87,8 @@ class Checkout extends Controller
         return 1;
     }
 
-    public function prepareInvoice(){
-        $checkoutList = $_GET['check-out-list'];
+    public function prepareInvoice(Request $request){
+        $checkoutList = $request->input('check-out-list');
 
         $invoiceArray = array();
 

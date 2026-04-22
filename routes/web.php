@@ -71,7 +71,7 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 //CHECKOUT
 Route::get('/calculate-checkout-list', "Checkout@calculateCheckoutList")->middleware('auth');
 
-Route::get('/checkout', "Checkout@checkout");
+Route::get('/checkout', "Checkout@salesCheckout");
 
 
 //SALES
