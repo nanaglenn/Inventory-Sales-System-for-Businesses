@@ -54,6 +54,7 @@ class Authentication extends Controller
         return view("auth.edit-user", compact("userData", "status", "user_id"));
     }
 
+<<<<<<< HEAD
     public function editUserData(Request $request){
         $userId = session()->get("edit-user-id");
 
@@ -78,6 +79,32 @@ class Authentication extends Controller
             DB::update("UPDATE users SET phone = (?) WHERE id = (?)", [$phone, $userId]);
 
         $password = $request->input('new-password');
+=======
+    public function editUserData(){
+        $userId = session()->get("edit-user-id");
+
+        $role = $_GET['access-level'];
+        $existingRole = $_GET['current-access-level'];
+        if ($role != $existingRole)
+            DB::update("UPDATE users SET access_level = (?) WHERE id = (?)", [$role, $userId]);
+
+        $name = $_GET['name'];
+        $existingName = $_GET['current-name'];
+        if ($name != $existingName)
+            DB::update("UPDATE users SET name = (?) WHERE id = (?)", [$name, $userId]);
+
+        $username = $_GET['username'];
+        $existingUsername = $_GET['current-username'];
+        if ($username != $existingUsername)
+            DB::update("UPDATE users SET username = (?) WHERE id = (?)", [$username, $userId]);
+
+        $phone = $_GET['phone'];
+        $existingPhone = $_GET['current-phone'];
+        if ($phone != $existingPhone)
+            DB::update("UPDATE users SET phone = (?) WHERE id = (?)", [$phone, $userId]);
+
+        $password = $_GET['new-password'];
+>>>>>>> 378df80085aad65960795f2be6d92428dac60024
         if (count($password) > 0){
             $newPassword = Hash::make($password);
             DB::update("UPDATE users SET password = (?) WHERE id = (?)", [$newPassword, $userId]);

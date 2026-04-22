@@ -43,8 +43,13 @@ class Alerts extends Controller
         }
     }
 
+<<<<<<< HEAD
     public function dismissMessage(Request $request){
         $messageId = $request->input('message-id');
+=======
+    public function dismissMessage(){
+        $messageId = $_GET['message-id'];
+>>>>>>> 378df80085aad65960795f2be6d92428dac60024
 
         DB::delete("DELETE FROM messages WHERE item_id = (?)", [$messageId]);
 
